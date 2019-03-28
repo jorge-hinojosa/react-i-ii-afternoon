@@ -18,9 +18,9 @@ function User(props) {
       <div className="User-info" id="movie-info">
         <div className="User-detail">Favorite Movies:</div>
         <ol className="User-movies">
-          <li>{data[props.id].favoriteMovies[0]}</li>
-          <li>{data[props.id].favoriteMovies[1]}</li>
-          <li>{data[props.id].favoriteMovies[2]}</li>
+          {data[props.id].favoriteMovies.map(
+            (movie,index) => <li key={index}>{movie}</li>
+          )}
         </ol>
       </div> 
     </section>
