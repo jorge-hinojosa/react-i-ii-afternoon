@@ -3,6 +3,7 @@ import './App.css';
 import User from './components/User'
 import NextBtn from './components/NextBtn';
 import PrevBtn from './components/PrevBtn';
+import data from './data';
 
 class App extends Component {
   constructor() {
@@ -15,11 +16,15 @@ class App extends Component {
 
   }
   nextUser() {
-    this.setState({id: this.state.id + 1});
+    this.setState(
+      this.state.id >= data.length - 1 ?
+      {id: 0} :
+      {id: this.state.id + 1}
+    )
   }
   prevUser() {
     this.state.id === 0 ? 
-    this.setState({id: 0}) :
+    this.setState({id: data.length - 1}) :
     this.setState({id: this.state.id - 1});
   }
   render() {

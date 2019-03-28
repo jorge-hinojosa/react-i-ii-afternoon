@@ -4,7 +4,10 @@ import data from '../data';
 function User(props) {
   return (
     <section className="Content-background">
-      <h1 id="user">{data[props.id].name.first} {data[props.id].name.last}</h1>
+      <div className="User-id">
+        <h1 id="user">{data[props.id].name.first} {data[props.id].name.last}</h1>
+        <h2 id='id-counter'>{[props.id + 1] + " / " + data.length}</h2>
+      </div>
 
       <div className="User-info" id="main-info">
         <div className="User-detail">From:<span className="User-detail-answer"> {data[props.id].city}</span></div>
